@@ -15,5 +15,12 @@ module.exports = defineConfig({
     },
     specPattern: "cypress/e2e/**/*.feature",
     supportFile: false, 
+    stepDefinitions: 'cypress/support/step_definitions',
+    env: {
+      ENV_name: 'Test', // Definir el entorno general
+      Test: {
+        url: 'https://demoblaze.com/index.html',
+      },
+    }
   }
 });
