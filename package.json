@@ -4,7 +4,13 @@
   "description": "Prueba QA Engineer",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:no-errors": "npx cypress run --spec cypress/e2e/features/no-javascript-errors.feature",
+    "test:no-errors:chrome": "npx cypress run --browser chrome --spec cypress/e2e/features/no-javascript-errors.feature",
+    "test:no-errors:firefox": "npx cypress run --browser firefox --spec cypress/e2e/features/no-javascript-errors.feature",
+    "test:no-errors:edge": "npx cypress run --browser edge --spec cypress/e2e/features/no-javascript-errors.feature",
+    "test:no-errors:electron": "npx cypress run --browser electron --spec cypress/e2e/features/no-javascript-errors.feature",
+    "test:no-errors:all": "npm run test:no-errors:chrome && npm run test:no-errors:firefox && npm run test:no-errors:edge && npm run test:no-errors:electron"
   },
   "keywords": [],
   "author": "",
