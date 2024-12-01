@@ -169,3 +169,35 @@ El caso de prueba verifica los códigos de estado HTTP de los enlaces en la pág
     Firefox,
     Edge,
     Electron
+
+### 2.2.2: Enlaces del menú de categorías
+Este caso de prueba valida las llamadas a la API al interactuar con los enlaces de las categorías en la página de inicio. Comprueba que las respuestas tienen un código de estado válido (200 o 30x) y que el primer ítem de la lista devuelta coincide con la categoría seleccionada.
+
+### Como ejecutar el test
+#### Ejecutar en un navegador específico
+- **Chrome:**
+  ```bash
+  npm run test:status-categories-links:chrome
+  ```
+- **Firefox:**
+  ```bash
+  npm run test:status-categories-links:firefox
+  ```
+- **Edge:**
+  ```bash
+  npm run test:status-categories-links:edge
+  ```
+- **Electron:**
+  ```bash
+  npm run test:status-categories-links:electron
+  ```
+- **Todos los navegadores**
+  ```bash
+  npm run test:status-categories-links:all
+  ```
+    Este comando ejecutará las pruebas en el siguiente orden:
+
+    Chrome,
+    Firefox,
+    Edge,
+    Electron
