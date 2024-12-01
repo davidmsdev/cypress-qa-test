@@ -77,16 +77,6 @@ env: {
 
 El objetivo de este ejercicio es asegurarnos de que no haya errores de JavaScript en la consola cuando se visita la página web especificada. Para ello, he creado un test que intercepta los errores de consola y verifica que no haya mensajes de error, como `Uncaught` o `Error`.
 
-
-
-### Explicación del código
-
-El código realiza lo siguiente:
-
-1. **Visita la página web**: Utiliza `cy.visit(url)` para cargar la página que se encuentra configurada en el entorno de Cypress.
-2. **Intercepta los errores en la consola**: Utiliza `cy.window()` para acceder al contexto del navegador y sustituir el método `console.error` por un "stub". Este "stub" permite espiar los mensajes de error que puedan aparecer en la consola.
-3. **Verifica que no haya errores**: Si los mensajes contienen las palabras `Uncaught` o `Error`, el test fallará, indicando que la página contiene errores de JavaScript.
-
 ### ¿Qué pasa si no hay errores?
 
 En el caso de que la página visitada no presente errores (como es el caso en la página usada), el test pasará correctamente, ya que no detectará ningún mensaje de error en la consola.
@@ -133,6 +123,45 @@ De esta forma el test fallará, por lo que comprobamos que funciona correctament
 - **Todos los navegadores**
   ```bash
   npm run test:no-errors:all
+  ```
+    Este comando ejecutará las pruebas en el siguiente orden:
+
+    Chrome,
+    Firefox,
+    Edge,
+    Electron
+
+## Case de prueba 2.2: Estados de las páginas
+Debido a casuísticas de la web a probar, este caso de prueba se divide en 3 partes:
+  1. Se prueban los enlaces de tipo "href" del menú de navegación.
+  2. Se prueban los enlaces tipo "modal" del menú de navegación.
+  3. Se prueban los enlaces del menú de categorías de la página de inicio.
+
+En cada uno de ellos se validará (si se puede) que recibimos como respuesta códigos de estado 200 o 30x y que no se reciben códigos de estado 40x.
+
+### 2.2.1: Enlaces href
+El caso de prueba verifica los códigos de estado HTTP de los enlaces en la página de navegación, asegurándose de que sean válidos (200 o 30x) y no contengan errores 40x.
+### Como ejecutar el test
+#### Ejecutar en un navegador específico
+- **Chrome:**
+  ```bash
+  npm run test:status-page-links:chrome
+  ```
+- **Firefox:**
+  ```bash
+  npm run test:status-page-links:firefox
+  ```
+- **Edge:**
+  ```bash
+  npm run test:status-page-links:edge
+  ```
+- **Electron:**
+  ```bash
+  npm run test:status-page-links:electron
+  ```
+- **Todos los navegadores**
+  ```bash
+  npm run test:status-page-links:all
   ```
     Este comando ejecutará las pruebas en el siguiente orden:
 

@@ -10,7 +10,12 @@
     "test:no-errors:firefox": "npx cypress run --browser firefox --spec cypress/e2e/features/no-javascript-errors.feature",
     "test:no-errors:edge": "npx cypress run --browser edge --spec cypress/e2e/features/no-javascript-errors.feature",
     "test:no-errors:electron": "npx cypress run --browser electron --spec cypress/e2e/features/no-javascript-errors.feature",
-    "test:no-errors:all": "npm run test:no-errors:chrome && npm run test:no-errors:firefox && npm run test:no-errors:edge && npm run test:no-errors:electron"
+    "test:no-errors:all": "npm run test:no-errors:chrome && npm run test:no-errors:firefox && npm run test:no-errors:edge && npm run test:no-errors:electron",
+    "test:status-page-links:chrome": "npx cypress run --browser chrome --spec cypress/e2e/status-page-links.feature",
+    "test:status-page-links:firefox": "npx cypress run --browser firefox --spec cypress/e2e/status-page-links.feature",
+    "test:status-page-links:edge": "npx cypress run --browser edge --spec cypress/e2e/status-page-links.feature",
+    "test:status-page-links:electron": "npx cypress run --browser electron --spec cypress/e2e/status-page-links.feature",
+    "test:status-page-links:all": "npx cypress run --spec cypress/e2e/status-page-links.feature"
   },
   "keywords": [],
   "author": "",
