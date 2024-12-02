@@ -20,6 +20,8 @@ module.exports = defineConfig({
       ENV_name: 'Test', // Definir el entorno general
       Test: {
         url: 'https://demoblaze.com/index.html',
+        userEmail: 'qa-test-shop@maildrop.cc',
+        userPassword: '123456'
       },
     }
   }

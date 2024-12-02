@@ -1,5 +1,7 @@
 import { Given, Then } from '@badeball/cypress-cucumber-preprocessor';
+import BasePage from '../../pages/BasePage';
 
+const basePage = new BasePage();
 const url = Cypress.env('Test').url;
 
 Given('el usuario visita la página de inicio', () => {
@@ -12,7 +14,7 @@ Given('el usuario visita la página de inicio', () => {
     });
   });
   */
-  cy.visit(url)
+  basePage.visitHomePage(url);
 });
 
 Then('no debería haber errores de JavaScript', () => {
