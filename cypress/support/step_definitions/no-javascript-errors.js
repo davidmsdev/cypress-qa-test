@@ -22,7 +22,6 @@ Then('no debería haber errores de JavaScript', () => {
 
     // Sustituimos console.error para espiar los mensajes de error
     cy.stub(window.console, 'error').callsFake((message) => {
-      // Comprobamos que el mensaje no contenga 'Uncaught' ni otros errores
       expect(message).to.not.include('Uncaught');
       expect(message).to.not.include('Error');
       // Llamamos al método original para mantener la funcionalidad de la consola

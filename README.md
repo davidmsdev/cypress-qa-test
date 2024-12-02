@@ -77,16 +77,6 @@ env: {
 
 El objetivo de este ejercicio es asegurarnos de que no haya errores de JavaScript en la consola cuando se visita la página web especificada. Para ello, he creado un test que intercepta los errores de consola y verifica que no haya mensajes de error, como `Uncaught` o `Error`.
 
-
-
-### Explicación del código
-
-El código realiza lo siguiente:
-
-1. **Visita la página web**: Utiliza `cy.visit(url)` para cargar la página que se encuentra configurada en el entorno de Cypress.
-2. **Intercepta los errores en la consola**: Utiliza `cy.window()` para acceder al contexto del navegador y sustituir el método `console.error` por un "stub". Este "stub" permite espiar los mensajes de error que puedan aparecer en la consola.
-3. **Verifica que no haya errores**: Si los mensajes contienen las palabras `Uncaught` o `Error`, el test fallará, indicando que la página contiene errores de JavaScript.
-
 ### ¿Qué pasa si no hay errores?
 
 En el caso de que la página visitada no presente errores (como es el caso en la página usada), el test pasará correctamente, ya que no detectará ningún mensaje de error en la consola.
@@ -133,6 +123,107 @@ De esta forma el test fallará, por lo que comprobamos que funciona correctament
 - **Todos los navegadores**
   ```bash
   npm run test:no-errors:all
+  ```
+    Este comando ejecutará las pruebas en el siguiente orden:
+
+    Chrome,
+    Firefox,
+    Edge,
+    Electron
+
+## Case de prueba 2.2: Estados de las páginas
+Debido a casuísticas de la web a probar, este caso de prueba se divide en 3 partes:
+  1. Se prueban los enlaces de tipo "href" del menú de navegación.
+  2. Se prueban los enlaces tipo "modal" del menú de navegación.
+  3. Se prueban los enlaces del menú de categorías de la página de inicio.
+
+En cada uno de ellos se validará (si se puede) que recibimos como respuesta códigos de estado 200 o 30x y que no se reciben códigos de estado 40x.
+
+### 2.2.1: Enlaces href
+El caso de prueba verifica los códigos de estado HTTP de los enlaces en la página de navegación, asegurándose de que sean válidos (200 o 30x) y no contengan errores 40x.
+### Como ejecutar el test
+#### Ejecutar en un navegador específico
+- **Chrome:**
+  ```bash
+  npm run test:status-page-links:chrome
+  ```
+- **Firefox:**
+  ```bash
+  npm run test:status-page-links:firefox
+  ```
+- **Edge:**
+  ```bash
+  npm run test:status-page-links:edge
+  ```
+- **Electron:**
+  ```bash
+  npm run test:status-page-links:electron
+  ```
+- **Todos los navegadores**
+  ```bash
+  npm run test:status-page-links:all
+  ```
+    Este comando ejecutará las pruebas en el siguiente orden:
+
+    Chrome,
+    Firefox,
+    Edge,
+    Electron
+### 2.2.2: Enlaces de tipo Modal
+Este caso de prueba se centra en verificar el comportamiento de los enlaces del menú de navegación que abren modales en la web. El objetivo es asegurarse de que al hacer clic en un enlace de tipo "modal", se abre el modal esperado y se cierra ya que no hay peticiones para poder validar el código de estado.
+### Como ejecutar el test
+#### Ejecutar en un navegador específico
+- **Chrome:**
+  ```bash
+  npm run test:status-modals-links:chrome
+  ```
+- **Firefox:**
+  ```bash
+  npm run test:status-modals-links:firefox
+  ```
+- **Edge:**
+  ```bash
+  npm run test:status-modals-links:edge
+  ```
+- **Electron:**
+  ```bash
+  npm run test:status-modals-links:electron
+  ```
+- **Todos los navegadores**
+  ```bash
+  npm run test:status-modals-links:all
+  ```
+    Este comando ejecutará las pruebas en el siguiente orden:
+
+    Chrome,
+    Firefox,
+    Edge,
+    Electron
+
+### 2.2.3: Enlaces del menú de categorías
+Este caso de prueba valida las llamadas a la API al interactuar con los enlaces de las categorías en la página de inicio. Comprueba que las respuestas tienen un código de estado válido (200 o 30x) y que el primer ítem de la lista devuelta coincide con la categoría seleccionada.
+
+### Como ejecutar el test
+#### Ejecutar en un navegador específico
+- **Chrome:**
+  ```bash
+  npm run test:status-categories-links:chrome
+  ```
+- **Firefox:**
+  ```bash
+  npm run test:status-categories-links:firefox
+  ```
+- **Edge:**
+  ```bash
+  npm run test:status-categories-links:edge
+  ```
+- **Electron:**
+  ```bash
+  npm run test:status-categories-links:electron
+  ```
+- **Todos los navegadores**
+  ```bash
+  npm run test:status-categories-links:all
   ```
     Este comando ejecutará las pruebas en el siguiente orden:
 
