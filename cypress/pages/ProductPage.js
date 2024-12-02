@@ -12,7 +12,7 @@ class ProductPage {
 
     addToCart() {
         cy.get(this.addToCartButton).click();
-        //cy.wait(500);
+        cy.wait(300);
         cy.on('window:alert', (text) => {
             expect(text).to.contains('Product added');
         });
