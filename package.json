@@ -20,7 +20,12 @@
     "test:status-categories-links:firefox": "npx cypress run --browser firefox --spec cypress/e2e/features/status-categories-links.feature",
     "test:status-categories-links:edge": "npx cypress run --browser edge --spec cypress/e2e/features/status-categories-links.feature",
     "test:status-categories-links:electron": "npx cypress run --browser electron --spec cypress/e2e/features/status-categories-links.feature",
-    "test:status-categories-links:all": "npm run test:status-categories-links:chrome && npm run test:status-categories-links:firefox && npm run test:status-categories-links:edge && npm run test:status-categories-links:electron"
+    "test:status-categories-links:all": "npm run test:status-categories-links:chrome && npm run test:status-categories-links:firefox && npm run test:status-categories-links:edge && npm run test:status-categories-links:electron",
+    "test:status-modals-links:chrome": "npx cypress run --browser chrome --spec cypress/e2e/features/status-modals-links.feature",
+    "test:status-modals-links:firefox": "npx cypress run --browser firefox --spec cypress/e2e/features/status-modals-links.feature",
+    "test:status-modals-links:edge": "npx cypress run --browser edge --spec cypress/e2e/features/status-modals-links.feature",
+    "test:status-modals-links:electron": "npx cypress run --browser electron --spec cypress/e2e/features/status-modals-links.feature",
+    "test:status-modals-links:all": "npm run test:status-modals-links:chrome && npm run test:status-modals-links:firefox && npm run test:status-modals-links:edge && npm run test:status-modals-links:electron"
   },
   "keywords": [],
   "author": "",

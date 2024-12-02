@@ -169,8 +169,38 @@ El caso de prueba verifica los códigos de estado HTTP de los enlaces en la pág
     Firefox,
     Edge,
     Electron
+### 2.2.2: Enlaces de tipo Modal
+Este caso de prueba se centra en verificar el comportamiento de los enlaces del menú de navegación que abren modales en la web. El objetivo es asegurarse de que al hacer clic en un enlace de tipo "modal", se abre el modal esperado y se cierra ya que no hay peticiones para poder validar el código de estado.
+### Como ejecutar el test
+#### Ejecutar en un navegador específico
+- **Chrome:**
+  ```bash
+  npm run test:status-modals-links:chrome
+  ```
+- **Firefox:**
+  ```bash
+  npm run test:status-modals-links:firefox
+  ```
+- **Edge:**
+  ```bash
+  npm run test:status-modals-links:edge
+  ```
+- **Electron:**
+  ```bash
+  npm run test:status-modals-links:electron
+  ```
+- **Todos los navegadores**
+  ```bash
+  npm run test:status-modals-links:all
+  ```
+    Este comando ejecutará las pruebas en el siguiente orden:
 
-### 2.2.2: Enlaces del menú de categorías
+    Chrome,
+    Firefox,
+    Edge,
+    Electron
+
+### 2.2.3: Enlaces del menú de categorías
 Este caso de prueba valida las llamadas a la API al interactuar con los enlaces de las categorías en la página de inicio. Comprueba que las respuestas tienen un código de estado válido (200 o 30x) y que el primer ítem de la lista devuelta coincide con la categoría seleccionada.
 
 ### Como ejecutar el test

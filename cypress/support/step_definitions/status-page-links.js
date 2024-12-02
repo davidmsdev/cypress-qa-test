@@ -1,3 +1,4 @@
+///<reference types="cypress" />
 import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor';
 import BasePage from '../../pages/BasePage';
 
