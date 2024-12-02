@@ -19,7 +19,7 @@ When('obtengo todos los enlaces de las categorías', () => {
   categoriesNames = homePage.getAllCategoriesKeys();
 });
 
-Then('verifico que la peticion devuelve un 200 y que el primer item de la lista coinicide con la categoria clicada', () => {
+Then('verifico que la peticion devuelve un 200 o 30x, ningún 40x y que el primer item de la lista coinicide con la categoria clicada', () => {
   cy.wrap(categoriesLinks).each((link, index) => {
     const categoryName = categoriesNames[index];
 
