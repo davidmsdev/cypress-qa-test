@@ -25,7 +25,12 @@
     "test:status-modals-links:firefox": "npx cypress run --browser firefox --spec cypress/e2e/features/status-modals-links.feature",
     "test:status-modals-links:edge": "npx cypress run --browser edge --spec cypress/e2e/features/status-modals-links.feature",
     "test:status-modals-links:electron": "npx cypress run --browser electron --spec cypress/e2e/features/status-modals-links.feature",
-    "test:status-modals-links:all": "npm run test:status-modals-links:chrome && npm run test:status-modals-links:firefox && npm run test:status-modals-links:edge && npm run test:status-modals-links:electron"
+    "test:status-modals-links:all": "npm run test:status-modals-links:chrome && npm run test:status-modals-links:firefox && npm run test:status-modals-links:edge && npm run test:status-modals-links:electron",
+    "test:shopping-cart:chrome": "npx cypress run --browser chrome --spec cypress/e2e/features/shopping-cart.feature",
+    "test:shopping-cart:firefox": "npx cypress run --browser firefox --spec cypress/e2e/features/shopping-cart.feature",
+    "test:shopping-cart:edge": "npx cypress run --browser edge --spec cypress/e2e/features/shopping-cart.feature",
+    "test:shopping-cart:electron": "npx cypress run --browser electron --spec cypress/e2e/features/shopping-cart.feature",
+    "test:shopping-cart:all": "npm run test:shopping-cart:chrome && npm run test:shopping-cart:firefox && npm run test:shopping-cart:edge && npm run test:shopping-cart:electron"
   },
   "keywords": [],
   "author": "",

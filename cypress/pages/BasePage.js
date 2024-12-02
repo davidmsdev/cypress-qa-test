@@ -12,8 +12,14 @@ class BasePage {
             logIn: '#logInModal',
             signUp: '#signInModal',
         };
-        this.closeModal_button = `button.close[type="button"]`;
-        this.closeModalFooterButton = `> .modal-dialog > .modal-content > .modal-footer > .btn-secondary`;
+        this.navigationLinks = {
+            cart: '#cartur', 
+            home: 'a.nav-link[href="index.html"]', 
+            contact: '#contact', 
+        };
+        this.closeModal_button = 'button.close[type="button"]';
+        this.closeModalFooterButton = '> .modal-dialog > .modal-content > .modal-footer > .btn-secondary';
+        this.welcomeMessage = '#nameofuser';
     }
 
     visitHomePage(url) {
@@ -30,6 +36,14 @@ class BasePage {
 
     openModal(modal) {
         cy.get(`[data-target="${modal}"]`).click();
+    }
+
+    clickHomeMenu() {
+        cy.get(this.navigationLinks.home).click();
+    }
+
+    clickCartMenu() {
+        cy.get(this.navigationLinks.cart).click();
     }
 
     verifyModalVisibility(modal) {
@@ -51,6 +65,10 @@ class BasePage {
         cy.get(modal)
             .should('not.be.visible')  
             .and('not.have.class', 'show');
+    }
+
+    verifyLogin(email) {
+        cy.get(this.welcomeMessage).should('contain.text', `Welcome ${email}`);
     }
 }
 

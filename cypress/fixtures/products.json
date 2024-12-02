@@ -1,0 +1,12 @@
+{
+    "products": [
+      {
+        "name": "Nexus 6",
+        "price": 650
+      },
+      {
+        "name": "Nokia lumia 1520",
+        "price": 820
+      }
+    ]
+  }
